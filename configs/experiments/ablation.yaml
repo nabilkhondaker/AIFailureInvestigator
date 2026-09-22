@@ -1,0 +1,25 @@
+name: ablation
+seed: 42
+description: Feature-group and sensor ablation
+
+ablations:
+  - name: no_frequency
+    disable: [frequency_domain]
+  - name: no_time
+    disable: [time_domain]
+  - name: no_temperature
+    disable: [temperature]
+  - name: vibration_only
+    disable: [temperature, current, torque]
+
+data:
+  n_samples: 1000
+
+models:
+  - fault_classifier
+
+metrics:
+  - accuracy
+  - macro_f1
+
+output_dir: outputs/experiments/ablations

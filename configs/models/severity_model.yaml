@@ -1,0 +1,19 @@
+model_type: regressor
+seed: 42
+
+regressor:
+  hidden_dims: [64, 32]
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 35
+  weight_decay: 1.0e-4
+
+features:
+  use_time_domain: true
+  use_frequency_domain: true
+  use_temperature: true
+
+training:
+  data_path: data/synthetic
+  output_dir: models
+  checkpoint_name: severity_regressor

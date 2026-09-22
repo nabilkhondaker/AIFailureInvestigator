@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "AI Machine Failure Investigator"
+version: 0.1.0
+date-released: "2026-09-21"
+authors:
+  - family-names: Khondaker
+    given-names: Nabil
+abstract: >
+  A research software framework for investigating faults in rotating mechanical
+  machinery using multi-sensor data, signal processing, anomaly detection,
+  supervised diagnosis, severity estimation, and evidence-based explainability.
+license: MIT
+keywords:
+  - condition monitoring
+  - fault diagnosis
+  - rotating machinery
+  - anomaly detection
+  - signal processing
+  - machine learning

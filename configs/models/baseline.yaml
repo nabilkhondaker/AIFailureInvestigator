@@ -1,0 +1,12 @@
+model_type: random_forest
+seed: 42
+random_forest:
+  n_estimators: 100
+  max_depth: 12
+features:
+  use_time_domain: true
+  use_frequency_domain: true
+training:
+  data_path: data/synthetic
+  output_dir: models
+  checkpoint_name: baseline_rf

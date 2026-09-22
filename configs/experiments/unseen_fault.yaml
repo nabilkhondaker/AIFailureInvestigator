@@ -1,0 +1,26 @@
+name: unseen_fault
+seed: 42
+description: Train on known faults; test anomaly response to held-out fault
+
+train_faults:
+  - HEALTHY
+  - IMBALANCE
+  - MISALIGNMENT
+  - BEARING_DEGRADATION
+
+held_out_faults:
+  - GEAR_WEAR
+  - LOOSENESS
+
+data:
+  n_samples: 1200
+
+models:
+  - anomaly_detector
+  - fault_classifier
+
+metrics:
+  - anomaly_recall_on_held_out
+  - false_known_label_rate
+
+output_dir: outputs/experiments/unseen_faults

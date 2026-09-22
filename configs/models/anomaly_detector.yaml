@@ -1,0 +1,30 @@
+model_type: isolation_forest   # isolation_forest | autoencoder | statistical
+seed: 42
+
+isolation_forest:
+  n_estimators: 200
+  contamination: 0.08
+  max_features: 1.0
+
+autoencoder:
+  hidden_dims: [64, 32, 16]
+  latent_dim: 8
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 30
+  reconstruction_threshold_quantile: 0.95
+
+statistical:
+  method: mahalanobis
+  threshold_std: 3.0
+
+features:
+  use_time_domain: true
+  use_frequency_domain: true
+  use_temperature: true
+  use_current: true
+
+training:
+  data_path: data/synthetic
+  output_dir: models
+  checkpoint_name: anomaly_detector

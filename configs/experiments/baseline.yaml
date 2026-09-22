@@ -1,0 +1,19 @@
+name: baseline
+seed: 42
+description: Baseline diagnosis comparison (statistical + RF + MLP)
+
+data:
+  path: data/synthetic
+  n_samples: 1500
+
+models:
+  - baseline
+  - fault_classifier
+
+metrics:
+  - accuracy
+  - macro_f1
+  - per_class_f1
+  - confusion_matrix
+
+output_dir: outputs/experiments/baseline

@@ -1,0 +1,46 @@
+# Default system configuration for the AI Machine Failure Investigator
+
+seed: 42
+output_dir: outputs
+log_level: INFO
+
+machine:
+  nominal_rpm: 1800.0
+  sampling_rate_hz: 5120.0
+  duration_s: 1.0
+  n_harmonics: 5
+
+sensors:
+  vibration:
+    enabled: true
+    noise_std: 0.02
+  temperature:
+    enabled: true
+    noise_std: 0.3
+    baseline_c: 45.0
+  current:
+    enabled: true
+    noise_std: 0.05
+  torque:
+    enabled: true
+    noise_std: 0.1
+  tachometer:
+    enabled: true
+    noise_std: 0.5
+
+investigation:
+  anomaly_threshold: 0.65
+  confidence_threshold: 0.55
+  severity_bins:
+    - [0.0, 0.2, "normal"]
+    - [0.2, 0.4, "early"]
+    - [0.4, 0.6, "moderate"]
+    - [0.6, 0.8, "severe"]
+    - [0.8, 1.01, "critical"]
+  report_format: text
+
+paths:
+  models: models
+  data: data/synthetic
+  reports: reports
+  figures: outputs/figures

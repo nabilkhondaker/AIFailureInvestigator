@@ -1,0 +1,12 @@
+seed: 45
+n_samples: 600
+sampling_rate_hz: 5120.0
+duration_s: 1.0
+rpm_range: [1000.0, 2800.0]
+load_range: [0.4, 1.0]
+fault_distribution:
+  HEALTHY: 0.25
+  MISALIGNMENT: 0.75
+severity_range: [0.15, 0.9]
+include_sensor_faults: false
+output_dir: data/synthetic/misalignment

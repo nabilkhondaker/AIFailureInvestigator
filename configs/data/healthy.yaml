@@ -1,0 +1,11 @@
+seed: 42
+n_samples: 500
+sampling_rate_hz: 5120.0
+duration_s: 1.0
+rpm_range: [1000.0, 2500.0]
+load_range: [0.4, 0.9]
+fault_distribution:
+  HEALTHY: 1.0
+severity_range: [0.0, 0.05]
+include_sensor_faults: false
+output_dir: data/synthetic/healthy

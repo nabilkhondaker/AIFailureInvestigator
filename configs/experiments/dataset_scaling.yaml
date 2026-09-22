@@ -1,0 +1,16 @@
+name: dataset_scaling
+seed: 42
+description: Model performance vs training set size
+
+train_sizes: [100, 250, 500, 1000, 2000]
+data:
+  path: data/synthetic
+
+models:
+  - fault_classifier
+
+metrics:
+  - accuracy
+  - macro_f1
+
+output_dir: outputs/experiments/dataset_scaling

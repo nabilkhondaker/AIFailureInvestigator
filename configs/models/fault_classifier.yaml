@@ -1,0 +1,45 @@
+model_type: mlp   # mlp | random_forest | cnn
+seed: 42
+
+mlp:
+  hidden_dims: [128, 64, 32]
+  dropout: 0.2
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 40
+  weight_decay: 1.0e-4
+
+random_forest:
+  n_estimators: 200
+  max_depth: 16
+  min_samples_leaf: 2
+
+cnn:
+  channels: [16, 32, 64]
+  kernel_size: 7
+  learning_rate: 0.0005
+  batch_size: 32
+  epochs: 30
+
+features:
+  use_time_domain: true
+  use_frequency_domain: true
+  use_temperature: true
+  use_current: true
+  use_operating_conditions: true
+
+training:
+  data_path: data/synthetic
+  output_dir: models
+  checkpoint_name: fault_classifier
+  class_names:
+    - HEALTHY
+    - BEARING_DEGRADATION
+    - BEARING_FAILURE
+    - IMBALANCE
+    - MISALIGNMENT
+    - LOOSENESS
+    - GEAR_WEAR
+    - LUBRICATION_FAILURE
+    - OVERHEATING
+    - SHAFT_DEFECT
